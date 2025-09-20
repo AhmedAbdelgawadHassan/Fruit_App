@@ -1,14 +1,12 @@
-import 'package:carousel_slider/carousel_slider.dart';
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit/widgets/banners.dart';
+import 'package:fruit/widgets/types_banner.dart';
 
 class HomeView extends StatelessWidget {
   HomeView({super.key});
-  final List<String> banners = [
-    "assets/banners/Slider 1.png",
-    "assets/banners/Slider 2.png",
-    "assets/banners/Slider 3.png",
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -32,30 +30,28 @@ class HomeView extends StatelessWidget {
         ),
         body: Column(
           children: [
-            CarouselSlider(
-              options: CarouselOptions(
-                autoPlay: true,
-                autoPlayCurve: Curves.linear,
-                height: 220,
-                autoPlayAnimationDuration: Duration(seconds: 3),
-                autoPlayInterval: Duration(seconds: 3),
-                enlargeCenterPage: true,
-                viewportFraction: 0.6,
-
+            Banners(), // Using the AutoPlay Banner
+            SizedBox(height: 20),
+            TypesBanner(),  // Using the AutoPlay Types_Banner
+            SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: [
+                  Text(
+                    "Fruits",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  Spacer(),
+                  Text(
+                    "See All",
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: Colors.green),
+                  ),
+                ],
               ),
-
-              items: banners.map((i) {
-                return Builder(
-                  builder: (BuildContext context) {
-                    return Padding(
-                      padding: EdgeInsets.only(left: 10),
-                      child: Image(image: AssetImage(i)),
-                    );
-                  },
-                );
-              }).toList(),
-            ),
-          ],
+            )
+           
+        ],
         ),
       ),
     );
