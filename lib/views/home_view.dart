@@ -2,7 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fruit/colors.dart';
 import 'package:fruit/widgets/banners.dart';
+import 'package:fruit/widgets/fruitsList.dart';
 import 'package:fruit/widgets/types_banner.dart';
 
 class HomeView extends StatelessWidget {
@@ -45,11 +47,13 @@ class HomeView extends StatelessWidget {
                   Spacer(),
                   Text(
                     "See All",
-                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: Colors.green),
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: Appcolors.primartyColor),
                   ),
                 ],
               ),
-            )
+            ),
+            SizedBox(height: 20),
+            Fruitslist(),
            
         ],
         ),

@@ -1,3 +1,7 @@
-  import 'package:flutter/material.dart';
 
- Color PrimartyColor = Color(0xff0CA201);
+import 'package:flutter/material.dart';
+
+class Appcolors
+{
+  static  Color primartyColor = Color(0xff0CA201);
+}
